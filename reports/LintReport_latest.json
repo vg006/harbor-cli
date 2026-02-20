@@ -1,0 +1,15 @@
+cmd/harbor/root/context/config_cmd_test.go:52:17   gosec  G101: Potential hardcoded credentials
+cmd/harbor/root/context/config_cmd_test.go:78:17   gosec  G101: Potential hardcoded credentials
+cmd/harbor/root/context/config_cmd_test.go:104:17  gosec  G101: Potential hardcoded credentials
+cmd/harbor/root/login.go:53:48                     gosec  G115: integer overflow conversion uintptr -> int
+pkg/api/types.go:47:2                              gosec  G117: Exported struct field "AccessKey" (JSON key "access_key") matches secret pattern
+pkg/api/types.go:49:2                              gosec  G117: Exported struct field "AccessSecret" (JSON key "access_secret") matches secret pattern
+pkg/config/robot/robot.go:77:2                     gosec  G117: Exported struct field "Secret" (JSON key "secret") matches secret pattern
+pkg/utils/config.go:32:2                           gosec  G117: Exported struct field "Password" (JSON key "Password") matches secret pattern
+pkg/views/context/list/view.go:39:25               gosec  G115: integer overflow conversion uintptr -> int
+pkg/views/login/create.go:28:2                     gosec  G117: Exported struct field "Password" (JSON key "Password") matches secret pattern
+pkg/views/robot/create/view.go:33:2                gosec  G117: Exported struct field "Secret" (JSON key "secret") matches secret pattern
+pkg/views/robot/update/view.go:37:2                gosec  G117: Exported struct field "Secret" (JSON key "secret") matches secret pattern
+pkg/views/user/create/view.go:30:2                 gosec  G117: Exported struct field "Password" (JSON key "Password") matches secret pattern
+test/helper/helpers.go:91:14                       gosec  G703: Path traversal via taint analysis
+test/helper/helpers.go:92:14                       gosec  G703: Path traversal via taint analysis
