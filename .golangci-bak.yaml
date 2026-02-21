@@ -30,10 +30,6 @@ linters:
       - third_party$
       - builtin$
       - examples$
-    rules:
-      - path: test
-        linters:
-          - gosec
 formatters:
   enable:
     - gofmt
