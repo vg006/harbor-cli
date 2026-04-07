@@ -56,12 +56,12 @@ Supports pagination, search queries, and sorting using flags.`,
 			if len(args) > 0 {
 				projectName, repoName, err = utils.ParseProjectRepo(args[0])
 				if err != nil {
-					return errors.New("Invalid project/repository format", "expected format: <project>/<repository>")
+					return err
 				}
 			} else {
 				projectName, err = prompt.GetProjectNameFromUser()
 				if err != nil {
-					return errors.AsError(err).WithMessage("failed to get project name")
+					return err
 				}
 				repoName = prompt.GetRepoNameFromUser(projectName)
 			}
@@ -69,7 +69,7 @@ Supports pagination, search queries, and sorting using flags.`,
 			artifacts, err = api.ListArtifact(projectName, repoName, opts)
 
 			if err != nil {
-				return errors.AsError(err).WithMessage("failed to list artifacts")
+				return err
 			}
 
 			FormatFlag := viper.GetString("output-format")
